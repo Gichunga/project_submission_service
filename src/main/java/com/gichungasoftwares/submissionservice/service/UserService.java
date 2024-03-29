@@ -12,6 +12,6 @@ public interface UserService {
 
     // get user profile from user service by jwt
     @GetMapping("api/users/profile")
-    ResponseEntity<UserDto> findUserByJwt(@RequestHeader("Authorization") String jwt) throws Exception ;
+    UserDto findUserByJwt(@RequestHeader("Authorization") String jwt) throws Exception ;
 
 }

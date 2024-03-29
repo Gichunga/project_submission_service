@@ -17,7 +17,7 @@ public class Submission {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    private Long taskId;
+    private Long projectId;
     private String githubUrl;
     private Long userId;
     private String status = "PENDING";

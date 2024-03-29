@@ -14,11 +14,11 @@ public interface ProjectService {
 
     //get project from the project service by provided id
     @GetMapping("api/projects/{projectId}") // provide the whole path
-    ResponseEntity<ProjectDto> getProjectById(@PathVariable("projectId") Long id) throws Exception ;
+    ProjectDto getProjectById(@PathVariable("projectId") Long id) throws Exception ;
 
     // mark project as completed
     @PutMapping("api/projects/{projectId}/complete")
-    ResponseEntity<ProjectDto> completeProject(
+    ProjectDto completeProject(
             @PathVariable("projectId") Long projectId,
             @RequestHeader("Authorization") String jwt
     ) throws Exception ;
