@@ -13,13 +13,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table(name = "submissions")
 public class Submission {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
     private Long projectId;
     private String githubUrl;
     private Long userId;
     private String status = "PENDING";
     private LocalDateTime submissionTime;
+
 }

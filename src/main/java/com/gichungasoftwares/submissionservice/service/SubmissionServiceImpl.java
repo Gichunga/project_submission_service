@@ -5,7 +5,6 @@ import com.gichungasoftwares.submissionservice.model.Submission;
 import com.gichungasoftwares.submissionservice.model.UserDto;
 import com.gichungasoftwares.submissionservice.repository.SubmissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -45,6 +44,12 @@ public class SubmissionServiceImpl implements SubmissionService{
     @Override
     public Submission getSubmissionById(Long submissionId) throws RuntimeException {
         return submissionRepository.findById(submissionId).orElseThrow(() -> new RuntimeException("Submission not found! " + submissionId));
+    }
+
+    // get all submissions
+    @Override
+    public List<Submission> getAllSubmissions(){
+        return submissionRepository.findAll();
     }
 
     // get all submissions of a project - one project can be assigned to multiple users
